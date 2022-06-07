@@ -29,6 +29,10 @@ public class Consumer implements Serializable {
 
 	private String mobileNumber;
 
+	private String username;
+
+	private String password;
+
 	@ManyToMany
 	private List<Product> products;
 
@@ -78,6 +82,22 @@ public class Consumer implements Serializable {
 
 	public void setProducts(List<Product> products) {
 		this.products = products;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public static long getSerialversionuid() {

@@ -21,4 +21,8 @@ public class ConsumerService {
 	public List<Consumer> findAllConsumer() {
 		return this.consumerRepository.findAll();
 	}
+
+	public Consumer findConsumerbyUsernameAndPassword(String username, String password) {
+		return this.consumerRepository.findConsumerbyUsernameAndPassword(username, password);
+	}
 }
