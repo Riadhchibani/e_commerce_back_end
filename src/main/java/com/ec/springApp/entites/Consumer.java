@@ -33,6 +33,8 @@ public class Consumer implements Serializable {
 
 	private String password;
 
+	private String role;
+
 	@ManyToMany
 	private List<Product> products;
 
@@ -100,8 +102,12 @@ public class Consumer implements Serializable {
 		this.password = password;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 }

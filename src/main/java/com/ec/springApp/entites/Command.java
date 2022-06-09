@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Command implements Serializable {
@@ -23,8 +24,13 @@ public class Command implements Serializable {
 
 	private String reference;
 
+	private String status;
+
 	@ManyToMany
 	private List<Product> products;
+
+	@ManyToOne
+	private Consumer consumer;
 
 	public Long getId() {
 		return id;
@@ -50,8 +56,20 @@ public class Command implements Serializable {
 		this.products = products;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Consumer getConsumer() {
+		return consumer;
+	}
+
+	public void setConsumer(Consumer consumer) {
+		this.consumer = consumer;
 	}
 
 }

@@ -25,4 +25,8 @@ public class ConsumerService {
 	public Consumer findConsumerbyUsernameAndPassword(String username, String password) {
 		return this.consumerRepository.findConsumerbyUsernameAndPassword(username, password);
 	}
+	
+	public Consumer updateCosumer(Consumer consumer) {
+		return this.consumerRepository.save(consumer);
+	}
 }

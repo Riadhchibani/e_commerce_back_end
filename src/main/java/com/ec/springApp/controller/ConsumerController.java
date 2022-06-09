@@ -2,12 +2,11 @@ package com.ec.springApp.controller;
 
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,8 +30,13 @@ public class ConsumerController {
 		return this.consumerService.findAllConsumer();
 	}
 	
-	@GetMapping("getConsumer")
-	public Consumer findConsumerByUsernameAndPassword(@PathParam("username") String username, @PathParam("password") String password) {
-		return this.consumerService.findConsumerbyUsernameAndPassword(username, password);
+	@PostMapping("getConsumer")
+	public Consumer findConsumerByUsernameAndPassword(@RequestBody Consumer consumer) {
+		return this.consumerService.findConsumerbyUsernameAndPassword(consumer.getUsername(), consumer.getPassword());
+	}
+	
+	@PutMapping("updateConsumer")
+	public Consumer updateCosumer(@RequestBody Consumer consumer) {
+		return this.consumerService.updateCosumer(consumer);
 	}
 }

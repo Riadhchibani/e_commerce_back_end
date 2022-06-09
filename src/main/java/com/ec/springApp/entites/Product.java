@@ -25,8 +25,7 @@ public class Product implements Serializable {
 
 	private String reference;
 
-	@ManyToMany
-	private List<Consumer> consumers;
+	private Integer qte;
 
 	public Long getId() {
 		return id;
@@ -60,16 +59,12 @@ public class Product implements Serializable {
 		this.reference = reference;
 	}
 
-	public List<Consumer> getConsumers() {
-		return consumers;
+	public Integer getQte() {
+		return qte;
 	}
 
-	public void setConsumers(List<Consumer> consumers) {
-		this.consumers = consumers;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setQte(Integer qte) {
+		this.qte = qte;
 	}
 
 }
