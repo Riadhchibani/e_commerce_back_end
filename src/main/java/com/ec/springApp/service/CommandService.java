@@ -1,6 +1,7 @@
 package com.ec.springApp.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,12 +22,18 @@ public class CommandService {
 	}
 
 	public void addCommand(Consumer consumer, List<Product> products) {
+        String reference = UUID.randomUUID().toString();
+        
 		Command command = new Command();
 		command.setConsumer(consumer);
 		command.setProducts(products);
 		command.setStatus("En attente");
-		command.setReference("Ref001");
+		command.setReference("Ref-"+reference.substring(reference.length() - 4));
 		this.commandeRepository.save(command);
+	}
+	
+	public void deleteCommand(Command cmd) {
+		this.commandeRepository.delete(cmd);
 	}
 
 	public List<Command> findAllCommand() {
