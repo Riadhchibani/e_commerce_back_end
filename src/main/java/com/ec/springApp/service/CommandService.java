@@ -22,14 +22,11 @@ public class CommandService {
 		return this.commandeRepository.findByConsumer(consumer);
 	}
 
-	public void addCommand(Consumer consumer, List<Product> products) {
+	public void addCommand(Command command) {
         String reference = UUID.randomUUID().toString();
-        
-		Command command = new Command();
+       
 		command.setDateCreation(new Date());
 		command.setDateValidation(new Date());
-		command.setConsumer(consumer);
-		command.setProducts(products);
 		command.setStatus("En attente");
 		command.setReference("Ref-"+reference.substring(reference.length() - 4));
 		this.commandeRepository.save(command);

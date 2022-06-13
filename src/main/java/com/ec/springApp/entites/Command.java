@@ -99,4 +99,12 @@ public class Command implements Serializable {
 		this.dateValidation = dateValidation;
 	}
 
+	public Integer getQte() {
+		return qte;
+	}
+
+	public void setQte(Integer qte) {
+		this.qte = qte;
+	}
+
 }
