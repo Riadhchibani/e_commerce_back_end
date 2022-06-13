@@ -1,5 +1,6 @@
 package com.ec.springApp.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,10 +26,16 @@ public class CommandService {
         String reference = UUID.randomUUID().toString();
         
 		Command command = new Command();
+		command.setDateCreation(new Date());
+		command.setDateValidation(new Date());
 		command.setConsumer(consumer);
 		command.setProducts(products);
 		command.setStatus("En attente");
 		command.setReference("Ref-"+reference.substring(reference.length() - 4));
+		this.commandeRepository.save(command);
+	}
+	
+	public void updateCommand(Command command) {
 		this.commandeRepository.save(command);
 	}
 	

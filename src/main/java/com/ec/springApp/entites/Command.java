@@ -1,6 +1,7 @@
 package com.ec.springApp.entites;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Command implements Serializable {
@@ -25,12 +28,20 @@ public class Command implements Serializable {
 	private String reference;
 
 	private String status;
+	
+	private Integer qte;
 
 	@ManyToMany
 	private List<Product> products;
 
 	@ManyToOne
 	private Consumer consumer;
+	
+	@DateTimeFormat(pattern="dd-M-yyyy hh:mm:ss")
+	private Date dateCreation;
+	
+	@DateTimeFormat(pattern="dd-M-yyyy hh:mm:ss")
+	private Date dateValidation;
 
 	public Long getId() {
 		return id;
@@ -70,6 +81,22 @@ public class Command implements Serializable {
 
 	public void setConsumer(Consumer consumer) {
 		this.consumer = consumer;
+	}
+
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
+
+	public Date getDateValidation() {
+		return dateValidation;
+	}
+
+	public void setDateValidation(Date dateValidation) {
+		this.dateValidation = dateValidation;
 	}
 
 }

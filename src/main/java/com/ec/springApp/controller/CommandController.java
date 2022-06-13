@@ -30,6 +30,11 @@ public class CommandController {
 		this.commandService.addCommand(command.getConsumer(), command.getProducts());
 	}
 	
+	@PostMapping("updateCommand")
+	public void updateCommand(@RequestBody Command command) {
+		this.commandService.updateCommand(command);
+	}
+	
 	@PostMapping("deleteCommand")
 	public void deleteCommand(@RequestBody Command command) {
 		this.commandService.deleteCommand(command);
