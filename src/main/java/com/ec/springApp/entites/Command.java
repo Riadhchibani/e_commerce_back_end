@@ -31,6 +31,8 @@ public class Command implements Serializable {
 
 	@ManyToOne
 	private Consumer consumer;
+	
+	private Integer qte;
 
 	public Long getId() {
 		return id;
@@ -70,6 +72,14 @@ public class Command implements Serializable {
 
 	public void setConsumer(Consumer consumer) {
 		this.consumer = consumer;
+	}
+
+	public Integer getQte() {
+		return qte;
+	}
+
+	public void setQte(Integer qte) {
+		this.qte = qte;
 	}
 
 }

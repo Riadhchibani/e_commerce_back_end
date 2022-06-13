@@ -20,10 +20,7 @@ public class CommandService {
 		return this.commandeRepository.findByConsumer(consumer);
 	}
 
-	public void addCommand(Consumer consumer, List<Product> products) {
-		Command command = new Command();
-		command.setConsumer(consumer);
-		command.setProducts(products);
+	public void addCommand(Command command) {
 		command.setStatus("En attente");
 		command.setReference("Ref001");
 		this.commandeRepository.save(command);

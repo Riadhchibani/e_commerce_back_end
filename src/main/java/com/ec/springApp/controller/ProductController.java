@@ -36,5 +36,10 @@ public class ProductController {
 	public List<Product> findProductByShortLabel(@PathParam("shortLabel") String shortLabel) {
 		return this.productService.findProductByShortLabel(shortLabel);
 	}
+	
+	@PostMapping("/updateProduct")
+	public Product updateProduct(@RequestBody Product product) {
+		return this.productService.updateProduct(product);
+	}
 
 }

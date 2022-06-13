@@ -25,4 +25,8 @@ public class ProductService {
 	public List<Product> findProductByShortLabel(String shortLabel) {
 		return this.productRepository.findByShortLabel(shortLabel);
 	}
+	
+	public Product updateProduct(Product product) {
+		return this.productRepository.save(product);
+	}
 }
