@@ -38,7 +38,7 @@ public class CommandService {
 	}
 	
 	public void deleteCommand(Command cmd) {
-		this.commandeRepository.delete(cmd);
+		this.commandeRepository.delete(cmd); 
 	}
 
 	public List<Command> findAllCommand() {
