@@ -27,7 +27,7 @@ public class CommandController {
 
 	@PostMapping("addCommand")
 	public void addCommand(@RequestBody Command command) {
-		this.commandService.addCommand(command.getConsumer(), command.getProducts());
+		this.commandService.addCommand(command);
 	}
 	
 	@PostMapping("updateCommand")
