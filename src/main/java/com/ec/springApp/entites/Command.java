@@ -85,7 +85,6 @@ public class Command implements Serializable {
 		this.consumer = consumer;
 	}
 
-<<<<<<< HEAD
 	public Date getDateCreation() {
 		return dateCreation;
 	}
@@ -102,8 +101,6 @@ public class Command implements Serializable {
 		this.dateValidation = dateValidation;
 	}
 
-=======
->>>>>>> fa551c4c50cac67b5d633e4b9cafdfb256abdb4c
 	public Integer getQte() {
 		return qte;
 	}
