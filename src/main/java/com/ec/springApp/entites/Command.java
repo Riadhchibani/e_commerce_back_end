@@ -37,11 +37,13 @@ public class Command implements Serializable {
 	@ManyToOne
 	private Consumer consumer;
 	
+
 	@DateTimeFormat(pattern="dd-M-yyyy hh:mm:ss")
 	private Date dateCreation;
 	
 	@DateTimeFormat(pattern="dd-M-yyyy hh:mm:ss")
 	private Date dateValidation;
+
 
 	public Long getId() {
 		return id;
