@@ -27,6 +27,8 @@ public class Product implements Serializable {
 
 	private Integer qte;
 
+	private String addProduct;
+
 	public Long getId() {
 		return id;
 	}
@@ -67,4 +69,11 @@ public class Product implements Serializable {
 		this.qte = qte;
 	}
 
+	public String getAddProduct() {
+		return addProduct;
+	}
+
+	public void setAddProduct(String addProduct) {
+		this.addProduct = addProduct;
+	}
 }
