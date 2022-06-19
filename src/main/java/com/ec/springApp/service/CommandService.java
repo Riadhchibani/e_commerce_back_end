@@ -24,11 +24,6 @@ public class CommandService {
 
 	public void addCommand(Command command) {
         String reference = UUID.randomUUID().toString();
-<<<<<<< HEAD
-       
-=======
-        
->>>>>>> 130a8f36c4221fb60806ff3e67a515f264bba23b
 		command.setDateCreation(new Date());
 		command.setDateValidation(new Date());
 		command.setStatus("En attente");
