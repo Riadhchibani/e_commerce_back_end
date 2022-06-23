@@ -1,10 +1,14 @@
 package com.ec.springApp.entites;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Holiday {
@@ -18,6 +22,12 @@ public class Holiday {
 	private String description;
 
 	private String status;
+
+	@DateTimeFormat(pattern = "dd-M-yyyy hh:mm:ss")
+	private Date beginDate;
+
+	@DateTimeFormat(pattern = "dd-M-yyyy hh:mm:ss")
+	private Date endDate;
 
 	@ManyToOne
 	private Consumer consumerAdmin;
@@ -71,6 +81,22 @@ public class Holiday {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public Date getBeginDate() {
+		return beginDate;
+	}
+
+	public void setBeginDate(Date beginDate) {
+		this.beginDate = beginDate;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 }

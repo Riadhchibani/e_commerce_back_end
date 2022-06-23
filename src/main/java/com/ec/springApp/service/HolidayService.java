@@ -17,6 +17,7 @@ public class HolidayService {
 
 	public void saveHoliday(Holiday holiday) {
 		holiday.setStatus(STATUS_HOLIDAY.EN_COURS.toString());
+		holiday.setNumberDay((int) Math.abs(holiday.getEndDate().getTime() - holiday.getBeginDate().getTime()));
 		this.holidayRepository.save(holiday);
 	}
 
