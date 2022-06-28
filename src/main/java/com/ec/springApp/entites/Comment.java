@@ -14,11 +14,15 @@ public class Comment {
 	private Long id;
 
 	private String description;
-
+	
 	@OneToOne
 	private Holiday holiday;
+
 	@OneToOne
 	private Outlay outlay;
+	
+	@OneToOne
+	private Command command;
 
 	public Long getId() {
 		return id;
@@ -51,5 +55,15 @@ public class Comment {
 	public void setOutlay(Outlay outlay) {
 		this.outlay = outlay;
 	}
+
+	public Command getCommand() {
+		return command;
+	}
+
+	public void setCommand(Command command) {
+		this.command = command;
+	}
+	
+	
 
 }

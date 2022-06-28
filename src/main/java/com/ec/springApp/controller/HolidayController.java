@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ec.springApp.entites.Holiday;
 import com.ec.springApp.service.HolidayService;
 
-@CrossOrigin
 @RestController
+@CrossOrigin
 public class HolidayController {
 
 	@Autowired
