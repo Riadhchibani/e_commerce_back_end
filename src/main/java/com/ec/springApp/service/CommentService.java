@@ -18,11 +18,11 @@ public class CommentService {
 		this.commentRepository.save(comment);
 	}
 	
-	public Comment findByCommand(Command command) {
-		return this.commentRepository.findByCommand(command);
+	public String findByCommand(Command command) {
+		return this.commentRepository.findByCommand(command).getDescription();
 	}
 	
-	public Comment findByHoliday(Holiday holiday) {
-		return this.commentRepository.findByHoliday(holiday);
+	public String findByHoliday(Holiday holiday) {
+		return this.commentRepository.findByHoliday(holiday).getDescription();
 	}
 }

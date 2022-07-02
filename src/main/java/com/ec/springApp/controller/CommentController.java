@@ -24,13 +24,13 @@ public class CommentController {
 		this.commentService.addComment(comment);
 	}
 
-	@GetMapping("getCommandComment")
-	public Comment findCommentByCommand(@RequestBody Command command) {
+	@PostMapping("getCommandComment")
+	public String findCommentByCommand(@RequestBody Command command) {
 		return this.commentService.findByCommand(command);
 	}
 
-	@GetMapping("getHolidayComment")
-	public Comment findCommentByHolisay(@RequestBody Holiday holiday) {
+	@PostMapping("getHolidayComment")
+	public String findCommentByHolisay(@RequestBody Holiday holiday) {
 		return this.commentService.findByHoliday(holiday);
 	}
 }
