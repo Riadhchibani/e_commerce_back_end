@@ -17,12 +17,14 @@ public class CommentService {
 	public void addComment(Comment comment) {
 		this.commentRepository.save(comment);
 	}
-	
+
 	public String findByCommand(Command command) {
-		return this.commentRepository.findByCommand(command).getDescription();
+		return (this.commentRepository.findByCommand(command) == null ? ""
+				: this.commentRepository.findByCommand(command).getDescription());
 	}
-	
+
 	public String findByHoliday(Holiday holiday) {
-		return this.commentRepository.findByHoliday(holiday).getDescription();
+		return (this.commentRepository.findByHoliday(holiday) == null ? ""
+				: this.commentRepository.findByHoliday(holiday).getDescription());
 	}
 }
