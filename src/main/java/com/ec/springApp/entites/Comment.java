@@ -11,7 +11,7 @@ public class Comment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idComment;
 
 	private String description;
 	
@@ -24,12 +24,12 @@ public class Comment {
 	@OneToOne
 	private Command command;
 
-	public Long getId() {
-		return id;
+	public Long getIdComment() {
+		return idComment;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdComment(Long idComment) {
+		this.idComment = idComment;
 	}
 
 	public String getDescription() {

@@ -19,7 +19,7 @@ public class CommentService {
 	}
 
 	public String findByCommand(Command command) {
-		return (this.commentRepository.findByCommand(command) == null ? ""
+		return (this.commentRepository.findByCommand(command) == null ? null
 				: this.commentRepository.findByCommand(command).getDescription());
 	}
 
