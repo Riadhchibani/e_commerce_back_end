@@ -25,8 +25,16 @@ public class ConsumerService {
 	public Consumer findConsumerbyUsernameAndPassword(String username, String password) {
 		return this.consumerRepository.findConsumerbyUsernameAndPassword(username, password);
 	}
-	
+
 	public Consumer updateCosumer(Consumer consumer) {
 		return this.consumerRepository.save(consumer);
+	}
+
+	public Boolean existsByUsername(String username) {
+		return this.consumerRepository.existsByUsername(username);
+	}
+
+	public Boolean existsByEmail(String email) {
+		return this.consumerRepository.existsByEmail(email);
 	}
 }
