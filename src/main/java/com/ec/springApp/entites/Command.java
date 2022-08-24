@@ -23,7 +23,7 @@ public class Command implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idCommand;
 
 	private String reference;
 
@@ -45,12 +45,12 @@ public class Command implements Serializable {
 	private Date dateValidation;
 
 
-	public Long getId() {
-		return id;
+	public Long getIdCommand() {
+		return idCommand;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdCommand(Long idCommand) {
+		this.idCommand = idCommand;
 	}
 
 	public String getReference() {
